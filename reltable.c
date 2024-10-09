@@ -600,7 +600,7 @@ double h_k[20] = {1.1589, 1.89, 2.13397, 2.24539, 2.27, 2.23798, 2.19106, 2.1139
 double hg[30];
 int ci=-1;
 
-lpDat* load_single_lp_nk_Dat(fitsfile* fptr, int n_h, int n_rad, int i, int j, int rownum, double defpar[], int nhdu, int* status){
+lpDat* load_single_lp_nk_Dat(fitsfile* fptr, int n_h, int n_rad, int i, int j, int rownum, float defpar[], int nhdu, int* status){
 	lpDat* dat = new_lpDat(n_h,n_rad,status);
 	CHECK_MALLOC_RET_STATUS(dat,status,NULL);
 
