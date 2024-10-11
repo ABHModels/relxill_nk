@@ -76,6 +76,8 @@ void get_lin_grid(double* ener, int n_ener, double emin, double emax);
 /* get the current version number */
 void get_version_number(char** vstr, int* status);
 
+void get_version_number_nk(char** vstr, int* status);
+
 /* print relxill error message */
 void relxill_error(const char* const func, const char* const msg, int* status);
 
@@ -180,6 +182,8 @@ double density_ss73_zone_a(double radius, double rms);
 
 /** is is a model for which we want to calculate the ionization gradient? **/
 int is_iongrad_model(int ion_type, int ion_grad_type);
+
+int is_densgrad_model(int rmodel_type, int xmodel_type, int ion_grad_type );
 
 void free_ion_grad(ion_grad* ion);
 ion_grad* new_ion_grad(double* r, int n, int* status);

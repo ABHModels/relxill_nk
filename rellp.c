@@ -17,6 +17,7 @@
 */
 
 #include "rellp.h"
+#include "relrc.h"
 
 // lpTable* cached_lp_table = NULL;
 lpnkTable* cached_lp_table = NULL;

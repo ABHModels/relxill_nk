@@ -20,6 +20,7 @@
 #include "time.h"
 
 extern int loaded_file_def_par;
+extern int rel_nk_table_ng;
 
 static relDat* new_relDat(int nr, int ng, int* status){
 	relDat* dat = (relDat*) malloc (sizeof(relDat));
@@ -248,7 +249,7 @@ static relDat* load_single_relDat(fitsfile* fptr, char* extname, int nhdu, int* 
 	}
 
 	// allocate the memory for the table
-	relDat* dat = new_relDat(RELNKTABLE_NR,RELNKTABLE_NG,status);
+	relDat* dat = new_relDat(RELNKTABLE_NR,rel_nk_table_ng,status);
 	CHECK_STATUS_RET(*status,NULL);
 
 	// now load the table column by column
@@ -265,13 +266,13 @@ static relDat* load_single_relDat(fitsfile* fptr, char* extname, int nhdu, int* 
     CHECK_STATUS_RET(*status,dat);
 
     // (2) and finally the 2D columns
-    load_single_relDat_2dcol(fptr,dat->trff2,RELNKTABLE_NR,RELNKTABLE_NG,colnum_trff2,status);
+    load_single_relDat_2dcol(fptr,dat->trff2,RELNKTABLE_NR,rel_nk_table_ng,colnum_trff2,status);
     CHECK_STATUS_RET(*status,dat);
-    load_single_relDat_2dcol(fptr,dat->trff1,RELNKTABLE_NR,RELNKTABLE_NG,colnum_trff1,status);
+    load_single_relDat_2dcol(fptr,dat->trff1,RELNKTABLE_NR,rel_nk_table_ng,colnum_trff1,status);
     CHECK_STATUS_RET(*status,dat);
-    load_single_relDat_2dcol(fptr,dat->cosne1,RELNKTABLE_NR,RELNKTABLE_NG,colnum_cosne1,status);
+    load_single_relDat_2dcol(fptr,dat->cosne1,RELNKTABLE_NR,rel_nk_table_ng,colnum_cosne1,status);
     CHECK_STATUS_RET(*status,dat);
-    load_single_relDat_2dcol(fptr,dat->cosne2,RELNKTABLE_NR,RELNKTABLE_NG,colnum_cosne2,status);
+    load_single_relDat_2dcol(fptr,dat->cosne2,RELNKTABLE_NR,rel_nk_table_ng,colnum_cosne2,status);
     CHECK_STATUS_RET(*status,dat);
 
     return dat;
@@ -377,7 +378,7 @@ void read_rellinenk_table(char* filename, relnkTable** inp_tab, int* status){
 		// 	free_relnkTable(tab);
 		// 	tab = NULL;
 		// }
-		tab = new_relnkTable(RELNKTABLE_NA,RELNKTABLE_NMU0,RELNKTABLE_NR,RELNKTABLE_NG,RELTABLE_NDEFPAR,status);
+		tab = new_relnkTable(RELNKTABLE_NA,RELNKTABLE_NMU0,RELNKTABLE_NR,rel_nk_table_ng,RELTABLE_NDEFPAR,status);
 		CHECK_STATUS_BREAK(*status);
 
 		// should be set by previous routine
@@ -600,7 +601,7 @@ double h_k[20] = {1.1589, 1.89, 2.13397, 2.24539, 2.27, 2.23798, 2.19106, 2.1139
 double hg[30];
 int ci=-1;
 
-lpDat* load_single_lp_nk_Dat(fitsfile* fptr, int n_h, int n_rad, int i, int j, int rownum, double defpar[], int nhdu, int* status){
+lpDat* load_single_lp_nk_Dat(fitsfile* fptr, int n_h, int n_rad, int i, int j, int rownum, float defpar[], int nhdu, int* status){
 	lpDat* dat = new_lpDat(n_h,n_rad,status);
 	CHECK_MALLOC_RET_STATUS(dat,status,NULL);
 

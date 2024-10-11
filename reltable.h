@@ -168,5 +168,6 @@ void check_rcTable_cache(char* fname, rcTable* tab, int* ind, int* status);
 
 fitsfile* open_rc_tab(char* filename, int* status);
 
+void init_rc_table(char* filename, rcTable** inp_tab, int* status);
 
 #endif /* RELTABLE_H_ */

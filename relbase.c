@@ -18,6 +18,8 @@
 #include "relbase.h"
 
 
+int rel_nk_table_ng;
+
 // new CACHE routines
 cnode* cache_relbase = NULL;
 cnode* cache_syspar  = NULL;
@@ -78,8 +80,10 @@ char* get_filename(int * status){
 	int mdot_type = current_mdot_type;
 	int def_par_type = current_def_par_type;
 	// printf("%d %d\n", def_par_type, mdot_type);
+	rel_nk_table_ng=RELNKTABLE_NG_OLD;
 	if (mdot_type == 0) {
 		if (def_par_type == 1) {
+		        rel_nk_table_ng=RELNKTABLE_NG;
 			return NK_FILENAME_1;
 		}
 		if (def_par_type == 2) {
