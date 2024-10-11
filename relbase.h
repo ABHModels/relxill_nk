@@ -45,7 +45,7 @@
 #define version_dev_nk ""
 
 /** path to all RELXILL tables */
-#define RELXILL_TABLE_PATH "/Users/askarabd/Documents/fudan/FITS"
+#define RELXILL_TABLE_PATH "/media/linux/relxill_nk_v1.6.3"
 
 /** dimensions of the RELLINE table */
 #define RELTABLE_NA 25
@@ -125,6 +125,7 @@
 #define RELNKTABLE_NMU0 22
 #define RELNKTABLE_NR 100
 #define RELNKTABLE_NG 40
+#define RELNKTABLE_NG_OLD 20
 
 
 /****** TYPE DEFINITIONS ******/
