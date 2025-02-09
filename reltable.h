@@ -135,6 +135,9 @@ typedef struct {
 // rcTable* new_rcTable(int n_a, int n_dp, int n_h, int n_r, int *status);
 rcTable* new_rcTable(int n_a, int n_dp, int n_h, int n_r, int n_intens, int* status);
 
+void init_rc_table(char* filename, rcTable** inp_tab, int* status);
+
+
 void free_rcTable(rcTable * tab);
 
 /* create a new LP table */

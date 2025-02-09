@@ -21,6 +21,10 @@
 #include "relbase.h"
 #include "relutility.h"
 
+
+#include "relrc.h"
+
+
 // calculate the angles of emission from the primary source to git Rin and Rout
 void get_ad_del_lim(relParam* param, relSysPar* sysPar, int* status);
 
