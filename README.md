@@ -46,7 +46,7 @@ If you are using the RELXILL_NK model in your work please cite the following:
 * To work with the model, one would require certain FITS files.
     - Xillver table (which is the same as for relxilll and can be downloaded from the [webpage of relxill model](https://www.sternwarte.uni-erlangen.de/~dauser/research/relxill/index.html)).
     - FITS file of the transfer functions of the Johannsen metric are available here: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13906295.svg)](https://doi.org/10.5281/zenodo.13906295)    
-      NOTE: When using FITS file of \alpha_{22} or \epsilon_{3}, please change `#define RELTABLE_NG 40` to `#define RELTABLE_NG 40` in the file `relbase.h`
+      NOTE: When using FITS file of \alpha_{22} or \epsilon_{3}, please change `#define RELTABLE_NG 40` to `#define RELTABLE_NG 20` in the file `relbase.h`
 
     - The models with lamppost/ring-like/disk-like coronae geometry require another FITS file (currently can be provided upon request, we will provide a link to download at a later stage).
  
